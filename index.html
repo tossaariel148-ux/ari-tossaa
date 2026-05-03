@@ -344,11 +344,11 @@
     }
     .hero h1 {
       font-family: var(--font-h);
-      font-size: clamp(2.4rem, 6vw, 4.5rem);
+      font-size: clamp(1.8rem, 4vw, 3.2rem);
       font-weight: 800;
-      line-height: 1.08;
+      line-height: 1.12;
       margin-bottom: 1.4rem;
-      letter-spacing: -1.5px;
+      letter-spacing: -1px;
     }
     .hero h1 .accent {
       background: var(--grad);
@@ -419,12 +419,12 @@
       box-shadow: 0 0 30px rgba(37,211,102,0.35);
       transform: translateY(-2px) scale(1.02);
     }
-    .btn-orange {
-      background: var(--grad-hot);
+    .btn-instagram {
+      background: linear-gradient(135deg, #f09433, #e6683c, #dc2743, #cc2366, #bc1888);
       color: white;
     }
-    .btn-orange:hover {
-      box-shadow: 0 0 30px rgba(255,107,43,0.35);
+    .btn-instagram:hover {
+      box-shadow: 0 0 30px rgba(220,39,67,0.4);
       transform: translateY(-2px) scale(1.02);
     }
 
@@ -874,11 +874,22 @@
       background: #000;
       border-radius: 12px;
       overflow: hidden;
+      position: relative;
     }
     .modal-video-wrap iframe,
     .modal-video-wrap video {
       width: 100%; height: 100%;
       border: none;
+    }
+    /* Barre du bas YouTube masquée */
+    .modal-video-wrap::after {
+      content: '';
+      position: absolute;
+      bottom: 0; left: 0; right: 0;
+      height: 40px;
+      background: #000;
+      pointer-events: none;
+      z-index: 2;
     }
     .modal-title {
       font-family: var(--font-h);
@@ -1356,7 +1367,7 @@
              </div>
         ====================================================== -->
         <div class="hero-photo">
-          <img src="photo.jpg" alt="Ariel Tossa">
+          <img src="https://res.cloudinary.com/dstst0jkx/image/upload/_DSC7922.jpg_vjw7my.jpg" alt="Ariel Tossa">
         </div>
       </div>
     </div>
@@ -1514,9 +1525,9 @@
 
       <!-- VIDÉO 1 -->
       <div class="video-card"
-           data-video="https://www.youtube.com/embed/Kr4zXoFvgjw"
+           data-video="https://res.cloudinary.com/dstst0jkx/video/upload/lv_0_20260503154559_n0jxcr.mp4"
            data-title="Test YOMI"
-           data-type="youtube"
+           data-type="mp4"
            onclick="openModal(this)">
         <div class="video-thumb">
           <div class="thumb-clean">
@@ -1528,9 +1539,9 @@
 
       <!-- VIDÉO 2 -->
       <div class="video-card"
-           data-video="https://www.youtube.com/embed/tYlALvCZms4"
+           data-video="https://res.cloudinary.com/dstst0jkx/video/upload/lv_0_20260409224841_hoopx3.mp4"
            data-title="Pourquoi le montage vidéo ?"
-           data-type="youtube"
+           data-type="mp4"
            onclick="openModal(this)">
         <div class="video-thumb">
           <div class="thumb-clean">
@@ -1542,9 +1553,9 @@
 
       <!-- VIDÉO 3 -->
       <div class="video-card"
-           data-video="https://www.youtube.com/embed/nM8i0bR00Uw"
+           data-video="https://res.cloudinary.com/dstst0jkx/video/upload/lv_0_20260420212351_lujz8z.mp4"
            data-title="Le Freelancing dans toute son ampleur"
-           data-type="youtube"
+           data-type="mp4"
            onclick="openModal(this)">
         <div class="video-thumb">
           <div class="thumb-clean">
@@ -1556,9 +1567,9 @@
 
       <!-- VIDÉO 4 -->
       <div class="video-card"
-           data-video="https://www.youtube.com/embed/kStaC5qkClo"
+           data-video="https://res.cloudinary.com/dstst0jkx/video/upload/lv_0_20260424190733_diqmtn.mp4"
            data-title="L'incontournable LinkedIn"
-           data-type="youtube"
+           data-type="mp4"
            onclick="openModal(this)">
         <div class="video-thumb">
           <div class="thumb-clean">
@@ -1570,9 +1581,9 @@
 
       <!-- VIDÉO 5 -->
       <div class="video-card"
-           data-video="https://www.youtube.com/embed/1lyhDbsx45Q"
+           data-video="https://res.cloudinary.com/dstst0jkx/video/upload/lv_0_20260502201034_wd9w55.mp4"
            data-title="Who's Next?"
-           data-type="youtube"
+           data-type="mp4"
            onclick="openModal(this)">
         <div class="video-thumb">
           <div class="thumb-clean">
@@ -2125,11 +2136,15 @@
     <div class="cta-btns">
       <!-- MODIFIER LE LIEN WHATSAPP ICI -->
       <a href="https://wa.me/2290166187525?text=Bonjour%20je%20suis%20intéressé%20par%20vos%20services" target="_blank" class="btn btn-wa" style="font-size:1rem;padding:1rem 2.5rem;">
-        <i class="fab fa-whatsapp"></i> Démarrer sur WhatsApp
+        <i class="fab fa-whatsapp"></i> WhatsApp
       </a>
       <!-- MODIFIER L'EMAIL ICI -->
       <a href="mailto:tossaariel148@gmail.com" class="btn btn-outline" style="font-size:1rem;padding:1rem 2.5rem;">
-        <i class="fas fa-envelope"></i> Envoyer un email
+        <i class="fas fa-envelope"></i> Email
+      </a>
+      <!-- MODIFIER LE LIEN INSTAGRAM ICI -->
+      <a href="https://www.instagram.com/tossaarielsedjro?igsh=MXRjdmszOXJ4dGo4eg==" target="_blank" class="btn btn-instagram" style="font-size:1rem;padding:1rem 2.5rem;">
+        <i class="fab fa-instagram"></i> Instagram
       </a>
     </div>
   </div>
@@ -2143,8 +2158,7 @@
   <p class="footer-copy">© 2025 Ariel Tossa. Tous droits réservés.</p>
   <div class="footer-links">
     <!-- MODIFIER LES LIENS RÉSEAUX SOCIAUX ICI -->
-    <a href="#" title="TikTok"><i class="fab fa-tiktok"></i></a>
-    <a href="#" title="Instagram"><i class="fab fa-instagram"></i></a>
+    <a href="https://www.instagram.com/tossaarielsedjro?igsh=MXRjdmszOXJ4dGo4eg==" target="_blank" title="Instagram"><i class="fab fa-instagram"></i></a>
     <a href="https://wa.me/2290166187525" target="_blank" title="WhatsApp"><i class="fab fa-whatsapp"></i></a>
     <a href="mailto:tossaariel148@gmail.com" title="Email"><i class="fas fa-envelope"></i></a>
   </div>
@@ -2250,8 +2264,8 @@
     } else {
       // Paramètres YouTube : autoplay + HD forcé (vq=hd1080) + no branding
       const sep = src.includes('?') ? '&' : '?';
-      const embedUrl = src + sep + 'autoplay=1&vq=hd1080&modestbranding=1&rel=0&iv_load_policy=3';
-      wrap.innerHTML = `<iframe src="${embedUrl}" allowfullscreen allow="autoplay; fullscreen" frameborder="0"></iframe>`;
+      const embedUrl = src + sep + 'autoplay=1&vq=hd1080&modestbranding=1&rel=0&iv_load_policy=3&showinfo=0&controls=1&disablekb=0&fs=1&playsinline=1';
+      wrap.innerHTML = `<iframe src="${embedUrl}" allowfullscreen allow="autoplay; fullscreen" frameborder="0" style="width:100%;height:100%;border:none;"></iframe>`;
     }
 
     modal.classList.add('active');
